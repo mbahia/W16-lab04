@@ -114,9 +114,6 @@ public class AllMyDrawings
     
     public static void drawPicture3(Graphics2D g2) {
 	
-	// Label that tells what's in the drawing
-	g2.drawString("Swords in cool positions by Jimmy Le", 20,20);
-	
 	// Draw some swords
 	Sword s1 = new Sword(300,250,20,200);
 	Sword s2 = new Sword(300,250,20,200);
@@ -133,6 +130,7 @@ public class AllMyDrawings
 	g2.setColor(new Color(0xef1c67));
 	g2.draw(s3);
 
+  // Label that tells what's in the drawing
   Stroke orig=g2.getStroke();
   g2.setStroke(orig);
   g2.setColor(Color.BLACK); 
