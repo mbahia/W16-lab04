@@ -132,6 +132,11 @@ public class AllMyDrawings
 
 	g2.setColor(new Color(0xef1c67));
 	g2.draw(s3);
+
+  Stroke orig=g2.getStroke();
+  g2.setStroke(orig);
+  g2.setColor(Color.BLACK); 
+  g2.drawString("Triforce Swords by Jimmy Le", 20,20);
 	
     }       
 }
