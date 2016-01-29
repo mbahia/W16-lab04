@@ -22,7 +22,7 @@ public class SimpleGui1 {
 	
 	JButton button = new JButton("Click me and I'll grant you three wishes") ;
 	
-	java.awt.Color myColor = new java.awt.Color(204,255,153);   // R, G, B values.
+	java.awt.Color myColor = new java.awt.Color(0,90,150);   // R, G, B values.
 	button.setBackground(myColor);
 	button.setOpaque(true);
 
