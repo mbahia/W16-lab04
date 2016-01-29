@@ -28,11 +28,11 @@ public class CircleWithTwoSmallerOnes extends GeneralPathWrapper implements Shap
         // set up variables to draw smaller circles using x, y and r.                                                                                                     
         double firstSmallCircleX = x - r * 1/2;
         double firstSmallCircleY = y;
-        double firstSmallCircleR = r * 1/6;
+        double firstSmallCircleR = r * 1/8;
 
         double secondSmallCircleX = x + r * 1/2;
         double secondSmallCircleY = y;
-        double secondSmallCircleR = r * 1/6;
+        double secondSmallCircleR = r * 1/8;
 
         Circle biggestCircle = new Circle(x,y,r);
         Circle smallerCircle1 = new Circle(firstSmallCircleX, firstSmallCircleY,
