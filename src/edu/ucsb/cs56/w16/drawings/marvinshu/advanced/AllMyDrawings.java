@@ -18,7 +18,7 @@ import edu.ucsb.cs56.w16.drawings.utilities.GeneralPathWrapper;
 
 public class AllMyDrawings
 {
-    /** Draw a picture with a few houses 
+    /** Draw a picture with a few beetles and ladybugs
      */
     
     public static void drawPicture1(Graphics2D g2) {
@@ -26,14 +26,14 @@ public class AllMyDrawings
 	Beetle b1 = new Beetle(100,250,10);
 	g2.setColor(Color.CYAN); g2.draw(b1);
 	
-	// Make a black house that's half the size, 
+	// Make a black beetle that's half the size, 
 	// and moved over 150 pixels in x direction
 	
 	Shape h2 = ShapeTransforms.scaledCopyOfLL(b1,0.5,0.5);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
 	g2.setColor(Color.BLACK); g2.draw(h2);
 	
-	// Here's a house that's 4x as big (2x the original)
+	// Here's a beetle that's 4x as big (2x the original)
 	// and moved over 150 more pixels to right.
 	h2 = ShapeTransforms.scaledCopyOfLL(h2,4,4);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
@@ -50,48 +50,46 @@ public class AllMyDrawings
 	g2.setColor(new Color(0x002FA7)); 
 	g2.draw(h2); 
 	
-	// Draw two houses with Windows
+	// Draw two ladybugs
 	
-	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
-	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
+	LadyBug lb1 = new LadyBug(50,350,40,75);
+	LadyBug lb2 = new LadyBug(200,350,40,40);
 	
-	g2.draw(hw1);
-	g2.setColor(new Color(0x8F00FF)); g2.draw(hw2);
+	g2.draw(lb1);
+	g2.setColor(new Color(0x8F00FF)); g2.draw(lb2);
 	
 	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("A few houses by Phill Conrad", 20,20);
+	g2.drawString("Some beetles and ladybugs, by Marvin Shu", 20,20);
     }
     
     
-    /** Draw a picture with a few houses and coffee cups
+    /** Draw a picture with a few beetles and ladybugs
      */
     public static void drawPicture2(Graphics2D g2) {
 	
-	// Draw some coffee cups.
+	// Draw some ladybugs.
 	
-	CoffeeCup large = new CoffeeCup(100,50,225,150);
-	CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
-	CoffeeCup tallSkinny = new CoffeeCup(20,150,20,40);
-	CoffeeCup shortFat = new CoffeeCup(20,250,40,20);
+	LadyBug lb01 = new LadyBug(20,50,40,30);
+	LadyBug lb02 = new LadyBug(20,150,20,40);
+	LadyBug lb03 = new LadyBug(20,100,100,20);
 	
-	g2.setColor(Color.RED);     g2.draw(large);
-	g2.setColor(Color.GREEN);   g2.draw(smallCC);
-	g2.setColor(Color.BLUE);    g2.draw(tallSkinny);
-	g2.setColor(Color.MAGENTA); g2.draw(shortFat);
+	g2.setColor(Color.GREEN);   g2.draw(lb01);
+	g2.setColor(Color.BLUE);    g2.draw(lb02);
+	g2.setColor(Color.MAGENTA); g2.draw(lb03);
 	
-	House h1 = new House(100,250,50,75);
-	g2.setColor(Color.CYAN); g2.draw(h1);
+	Beetle b1 = new Beetle(100,250,50);
+	g2.setColor(Color.CYAN); g2.draw(b1);
 	
-	// Make a black house that's half the size, 
+	// Make a black beetle that's half the size, 
 	// and moved over 150 pixels in x direction
-	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.5,0.5);
+	Shape h2 = ShapeTransforms.scaledCopyOfLL(b1,0.5,0.5);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
 	g2.setColor(Color.BLACK); g2.draw(h2);
 	
-	// Here's a house that's 4x as big (2x the original)
+	// Here's a beetle that's 4x as big (2x the original)
 	// and moved over 150 more pixels to right.
 	h2 = ShapeTransforms.scaledCopyOfLL(h2,4,4);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
@@ -108,16 +106,16 @@ public class AllMyDrawings
 	g2.setColor(new Color(0x002FA7)); 
 	g2.draw(h2); 
 	
-	// Draw two houses with Windows
+	// Draw two ladybugs
 	
-	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
-	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
+	LadyBug lb1 = new LadyBug(50,350,40,75);
+	LadyBug lb2 = new LadyBug(200,350,100,50);
 	
-	g2.draw(hw1);
+	g2.draw(lb1);
 	g2.setColor(new Color(0x8F00FF)); 
 	
-	// Rotate the second house 45 degrees around its center.
-	Shape hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/4.0);
+	// Rotate the second beetle 45 degrees around its center.
+	Shape hw3 = ShapeTransforms.rotatedCopyOf(lb2, Math.PI/4.0);
 	
 	g2.draw(hw3);
 	
@@ -125,23 +123,23 @@ public class AllMyDrawings
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("A bunch of Coffee Cups and a few houses by Phill Conrad", 20,20);
+	g2.drawString("LadyBugs and Beetles by Marvin Shu", 20,20);
     }
     
-    /** Draw a different picture with a few houses and coffee cups
+    /** Draw a different picture with a few ladybugs
      */
     
     public static void drawPicture3(Graphics2D g2) {
 	
 	// label the drawing
 	
-	g2.drawString("A bunch of Coffee Cups by Phill Conrad", 20,20);
+	g2.drawString("A couple of ladybugs", 20,20);
 	
 	
-	// Draw some coffee cups.
+	// Draw some ladybugs.
 	
-	CoffeeCup large = new CoffeeCup(100,50,225,150);
-	CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
+	LadyBug large = new LadyBug(100,50,225,150);
+	LadyBug smallCC = new LadyBug(20,50,40,30);
 	
 	g2.setColor(Color.RED);     g2.draw(large);
 	g2.setColor(Color.GREEN);   g2.draw(smallCC);
