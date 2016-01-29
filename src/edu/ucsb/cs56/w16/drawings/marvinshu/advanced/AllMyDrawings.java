@@ -23,13 +23,13 @@ public class AllMyDrawings
     
     public static void drawPicture1(Graphics2D g2) {
 	
-	House h1 = new House(100,250,50,75);
-	g2.setColor(Color.CYAN); g2.draw(h1);
+	Beetle b1 = new Beetle(100,250,10);
+	g2.setColor(Color.CYAN); g2.draw(b1);
 	
 	// Make a black house that's half the size, 
 	// and moved over 150 pixels in x direction
 	
-	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.5,0.5);
+	Shape h2 = ShapeTransforms.scaledCopyOfLL(b1,0.5,0.5);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
 	g2.setColor(Color.BLACK); g2.draw(h2);
 	
