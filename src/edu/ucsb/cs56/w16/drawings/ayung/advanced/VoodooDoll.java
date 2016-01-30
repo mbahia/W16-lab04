@@ -16,8 +16,11 @@ import java.awt.geom.Ellipse2D;
 public class VoodooDoll extends Doll implements Shape
 {
     /**
-     * Constructor for Voodoo doll object  of class Doll
-     */
+       Constructor
+       @param x x coord of center  of voodoo doll
+       @param y y coord of top of voodoo doll
+       @param height height of voodoo doll
+    */
     public VoodooDoll(double x, double y, double height)
     {
 	// construct the basic doll shell

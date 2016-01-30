@@ -62,7 +62,7 @@ public class Doll extends GeneralPathWrapper implements Shape
        
        @param x x coord of center  of doll
        @param y y coord of top of doll
-       @param height of doll
+       @param height height of doll
     */
     public Doll(double x, double y, double height)
     {
