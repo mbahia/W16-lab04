@@ -18,7 +18,7 @@ public class GirlWithHeels extends LittleGirl implements Shape
        @param x x coord of lower left corner of the framing rectangle of the girl
        @param y y coord of lower left corner of the framign rectangle of the girl
        @param width width of the girl
-       @param height of the girl (without heels)
+       @param height height of the girl (without heels)
  */
     public GirlWithHeels(double x, double y, double width, double height)
     {

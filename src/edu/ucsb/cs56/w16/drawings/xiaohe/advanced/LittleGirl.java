@@ -25,7 +25,7 @@ public class LittleGirl extends GeneralPathWrapper implements Shape
        @param x x coord of lower left corner of the framing rectangle of the girl
        @param y y coord of lower left corner of the framign rectangle of the girl
        @param width width of the girl
-       @param height of the girl
+       @param height height of the girl
     */
     public LittleGirl(double x, double y, double width, double height)
     {
@@ -72,6 +72,3 @@ public class LittleGirl extends GeneralPathWrapper implements Shape
 	wholeHouse.append(rightLeg, false);
     }
 }
-
-//import edu.ucsb.cs56.w16.drawings.utilities.ShapeTransforms;
-//import edu.ucsb.cs56.w16.drawings.utilities.GeneralPathWrapper;

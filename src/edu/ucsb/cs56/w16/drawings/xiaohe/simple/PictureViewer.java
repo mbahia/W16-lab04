@@ -6,7 +6,7 @@ import javax.swing.JFrame;
  *  Rectangle, Line2D.Double, Ellipse2D.Double
  *  
  * @author P. Conrad
- * @author   ADD YOUR NAME @@@
+ * @author   Xiaohe he
  * @version CS56, W16, UCSB
  */
 
@@ -19,10 +19,10 @@ public class PictureViewer
 	// Set the size to whatever size you like (width, height)
 	// For projects you turn in, lets not get any bigger than 640,480
       
-	frame.setSize(640,480); // @@@ MODIFY THIS LINE IF YOU LIKE
+	frame.setSize(640,480); 
 	
 	// Set your own title
-	frame.setTitle("YOUR NAME HERE's Drawing"); // @@@ MODIFY THIS LINE
+	frame.setTitle("Xiaohe's Drawing"); 
 	
 	// Always do this so that the red X (or red circle) works
 	// to close the window. 
