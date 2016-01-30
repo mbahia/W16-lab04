@@ -18,7 +18,7 @@ import edu.ucsb.cs56.w16.drawings.utilities.GeneralPathWrapper;
 
 public class AllMyDrawings
 {
-    /** Draw a picture with a few houses 
+    /** Draw a picture with a few dolls
      */
     
     public static void drawPicture1(Graphics2D g2) {
@@ -78,7 +78,7 @@ public class AllMyDrawings
 		
 	// Sign and label
 	g2.setColor(Color.BLACK); 
-	g2.drawString("Perspective: voodoo dolls", 20,20);
+	g2.drawString("Perspective: voodoo dolls by Angela Yung", 20,20);
     }
     
     /** Draw a different picture with a few houses and coffee cups
@@ -87,10 +87,10 @@ public class AllMyDrawings
     public static void drawPicture3(Graphics2D g2) {
 	
 	// label the drawing
-	g2.drawString("An incomplete satanic circle of voodoo dolls", 20,20);
+	g2.drawString("A complete satanic circle of voodoo dolls by Angela Yung", 20,20);
 	
 	
-	VoodooDoll vd1 = new VoodooDoll(200,100,200);
+	VoodooDoll vd1 = new VoodooDoll(300,100,200);
 	g2.setColor(Color.BLACK); g2.draw(vd1);
 	
 	// Rotate 45 degrees around
@@ -102,6 +102,26 @@ public class AllMyDrawings
 	Shape vd3 = ShapeTransforms.rotatedCopyOf(vd1, -Math.PI/4.0);
 	vd3 = ShapeTransforms.translatedCopyOf(vd3,-100,40);
 	g2.draw(vd3);
+
+	Shape vd4 = ShapeTransforms.rotatedCopyOf(vd2, Math.PI/4.0);
+	vd4 = ShapeTransforms.translatedCopyOf(vd4,40,95);
+	g2.draw(vd4);
+
+	Shape vd5 = ShapeTransforms.rotatedCopyOf(vd3, -Math.PI/4.0);
+	vd5 = ShapeTransforms.translatedCopyOf(vd5,-40,95);
+	g2.draw(vd5);
+
+	Shape vd6 = ShapeTransforms.rotatedCopyOf(vd4, Math.PI/4.0);
+	vd6 = ShapeTransforms.translatedCopyOf(vd6,-40,100);
+	g2.draw(vd6);
+
+	Shape vd7 = ShapeTransforms.rotatedCopyOf(vd5, -Math.PI/4.0);
+	vd7 = ShapeTransforms.translatedCopyOf(vd7,40,100);
+	g2.draw(vd7);
+
+	Shape vd8 = ShapeTransforms.rotatedCopyOf(vd1, Math.PI);
+	vd8 = ShapeTransforms.translatedCopyOf(vd8,0, 280);
+	g2.draw(vd8);
      
 	
     }       
