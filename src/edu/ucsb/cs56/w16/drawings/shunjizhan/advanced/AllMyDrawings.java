@@ -1,3 +1,4 @@
+
 package edu.ucsb.cs56.w16.drawings.shunjizhan.advanced;
 
 import java.awt.Graphics2D;
@@ -10,7 +11,7 @@ import edu.ucsb.cs56.w16.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w16.drawings.utilities.GeneralPathWrapper;
 
 /**
- * A class with static methods for drawing various pictures
+ * A class with static methods for drawing Monsters and Pyramids
  * 
  * @author Shunji Zhan 
  * @version for UCSB CS56, W16 
@@ -18,132 +19,114 @@ import edu.ucsb.cs56.w16.drawings.utilities.GeneralPathWrapper;
 
 public class AllMyDrawings
 {
-    /** Draw a picture with a few houses 
+    /** Draw a picture with Monsters
      */
     
     public static void drawPicture1(Graphics2D g2) {
 	
-	Monster m1 = new Monster(100,250,50,75);
+	Monster m1 = new Monster(100,50,50,75);
 	g2.setColor(Color.BLUE); g2.draw(m1);
-	
-	// Make a black house that's half the size, 
-	// and moved over 150 pixels in x direction
-	
+		
 	Shape h2 = ShapeTransforms.scaledCopyOfLL(m1,0.5,0.5);
-	h2 = ShapeTransforms.translatedCopyOf(h2,300,0);
+	h2 = ShapeTransforms.translatedCopyOf(h2,100,100);
         g2.setColor(Color.BLACK); g2.draw(h2);
 	
-	// Here's a house that's 4x as big (2x the original)
-	// and moved over 150 more pixels to right.
-	h2 = ShapeTransforms.scaledCopyOfLL(h2,0.7,3);
-	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
+	h2 = ShapeTransforms.scaledCopyOfLL(h2,1.7,3);
+	h2 = ShapeTransforms.translatedCopyOf(h2,650,0);
 	
-	// We'll draw this with a thicker stroke
 	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
-	
-	// for hex colors, see (e.g.) http://en.wikipedia.org/wiki/List_of_colors
-	// #002FA7 is "International Klein Blue" according to Wikipedia
-	// In HTML we use #, but in Java (and C/C++) its 0x
-	
 	Stroke orig=g2.getStroke();
 	g2.setStroke(thick);
-	g2.setColor(new Color(0x002FA7)); 
+	g2.setColor(Color.RED); 
         g2.draw(h2); 
+
 	
 	// Draw two Monster With Bottles
 	
-	MonsterWithBottle hw1 = new MonsterWithBottle(50,350,140,275);
-        MonsterWithBottle hw2 = new MonsterWithBottle(500,30,100,300);
-	
+	MonsterWithBottle hw1 = new MonsterWithBottle(150,350,140,275);
+        MonsterWithBottle hw2 = new MonsterWithBottle(500,230,100,300);
+
+	g2.setColor(Color.BLUE);
         g2.draw(hw1);
-	g2.setColor(new Color(0x8F00FF)); g2.draw(hw2);
+	g2.setColor(Color.YELLOW); g2.draw(hw2);
 	
 	
 	g2.setStroke(orig);
-	g2.setColor(Color.YELLOW); 
-	g2.drawString("A few monsters by Shunji Zhan", 20,20);
+	g2.setColor(Color.GREEN); 
+	g2.drawString("some monsters by Shunji Zhan", 20,20);
     }
     
     
-    /** Draw a picture with a few houses and coffee cups
+    /** Draw a picture with a few Monsters and Pyramids
      */
     public static void drawPicture2(Graphics2D g2) {
 	
-	// Draw some coffee cups.
+	// Draw some Pyramids
 	
-	CoffeeCup large = new CoffeeCup(100,50,225,150);
-	CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
-	CoffeeCup tallSkinny = new CoffeeCup(20,150,20,40);
-	CoffeeCup shortFat = new CoffeeCup(20,250,40,20);
+        Pyramid large = new Pyramid(70,50,225,150);
+        Pyramid small = new Pyramid(20,30,80,60);
+        Pyramid tallSkinny = new Pyramid(30,250,40,80);
+        Pyramid shortFat = new Pyramid(20,450,80,40);
 	
 	g2.setColor(Color.RED);     g2.draw(large);
-	g2.setColor(Color.GREEN);   g2.draw(smallCC);
+	g2.setColor(Color.GREEN);   g2.draw(small);
 	g2.setColor(Color.BLUE);    g2.draw(tallSkinny);
 	g2.setColor(Color.MAGENTA); g2.draw(shortFat);
 	
-	Monster h1 = new Monster(100,250,50,75);
+	Monster h1 = new Monster(100,150,50,75);
 	g2.setColor(Color.ORANGE); g2.draw(h1);
 	
-	// Make a black house that's half the size, 
-	// and moved over 150 pixels in x direction
 	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.7,0.9);
-	h2 = ShapeTransforms.translatedCopyOf(h2,200,0);
+	h2 = ShapeTransforms.translatedCopyOf(h2,200,200);
 	g2.setColor(Color.BLACK); g2.draw(h2);
 	
-	// Here's a house that's 4x as big (2x the original)
-	// and moved over 150 more pixels to right.
 	h2 = ShapeTransforms.scaledCopyOfLL(h2,3,2.5);
 	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
 	
 	// We'll draw this with a thicker stroke
 	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
-	
-	// for hex colors, see (e.g.) http://en.wikipedia.org/wiki/List_of_colors
-	// #002FA7 is "International Klein Blue" according to Wikipedia
-	// In HTML we use #, but in Java (and C/C++) its 0x
-	
 	Stroke orig=g2.getStroke();
 	g2.setStroke(thick);
 	g2.setColor(new Color(0x002FA7)); 
 	g2.draw(h2); 
 	
-	// Draw two houses with Windows
+	// Draw two Monsters With bottles
 	
         MonsterWithBottle hw1 = new MonsterWithBottle(50,350,40,75);
-        MonsterWithBottle hw2 = new MonsterWithBottle(500,350,100,500);
+        MonsterWithBottle hw2 = new MonsterWithBottle(550,350,100,300);
 	
 	g2.draw(hw1);
 	g2.setColor(new Color(0x8F00FF)); 
 	
-	// Rotate the second house 45 degrees around its center.
-	Shape hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/3.0);
+	// Rotate the second monster 45 degrees around its center.
+	Shape hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/4.0);
 	
 	g2.draw(hw3);
 	
-	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("Some Monsters by Shunji Zhan", 20,20);
+	g2.drawString("Some Monsters and Pyramids by Shunji Zhan", 20,20);
     }
     
-    /** Draw a different picture with a few houses and coffee cups
+    /** Draw a different picture with some pyramids
      */
     
     public static void drawPicture3(Graphics2D g2) {
 	
 	// label the drawing
 	
-	g2.drawString("A bunch of Coffee Cups by Phill Conrad", 20,20);
+	g2.drawString("some hurricane pyramid by Shunji Zhan", 30,30);
 	
 	
-	// Draw some coffee cups.
+	// Draw some pyramid
 	
-	CoffeeCup large = new CoffeeCup(100,50,225,150);
-	CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
+	Pyramid large = new Pyramid(0,100,525,450);
+	Pyramid medium = new Pyramid(500,100,325,250);
+        Pyramid small = new Pyramid(20,100,40,60);
 	
 	g2.setColor(Color.RED);     g2.draw(large);
-	g2.setColor(Color.GREEN);   g2.draw(smallCC);
-	
+	g2.setColor(Color.GREEN);   g2.draw(small);
+	g2.setColor(Color.BLACK);   g2.draw(medium);
     }       
 }

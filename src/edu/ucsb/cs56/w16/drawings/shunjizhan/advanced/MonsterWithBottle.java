@@ -24,29 +24,16 @@ public class MonsterWithBottle extends Monster implements Shape
 	GeneralPath gp = this.get();
 
 	// build the bottle
-        double newx = x-width/2;
-	double newy = y-height/2;
+        double newx = x-width/3;
+	double newy = y-height/3;
 	double newwidth = 2*width;
 	double newheight = 2*height;
 	
-	Rectangle2D.Double line1 =
-	    new Rectangle2D.Double(newx,newy, newx+newwidth,newy);
-	Rectangle2D.Double line2 =
-	    new Rectangle2D.Double(newx,newy, newx,newy+newheight);
-	Rectangle2D.Double line3 =
-	    new Rectangle2D.Double(newx,newy+newheight, newx+newwidth,newy+newheight);
-	Rectangle2D.Double line4 =
-	    new Rectangle2D.Double(newx+newwidth,newy, newx+newwidth,newy+newheight);
-        
-	
-	// add the windows to the house
-	// Look up the meaning of the second parameter of append
-	// (Hint--is a method of "GeneralPath")
-	
+	Rectangle2D.Double bottle =
+	    new Rectangle2D.Double(newx,newy, newwidth,newheight);
+       	
         GeneralPath wholeMonster = this.get();
-        wholeMonster.append(line1, false);
-        //wholeMonster.append(line4, false);
-        //wholeMonster.append(line3, false);
-	//wholeMonster.append(line2, false); 
+        wholeMonster.append(bottle, false);
+        
     }    
 }

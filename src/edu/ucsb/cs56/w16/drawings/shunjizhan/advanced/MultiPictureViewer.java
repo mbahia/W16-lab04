@@ -3,8 +3,7 @@ package edu.ucsb.cs56.w16.drawings.shunjizhan.advanced;
 import javax.swing.JFrame;
 
 /** A viewer class to see a picture I drew with 
- *  just three simple Java graphics objects, namely
- *  Rectangle, Line2D.Double, Ellipse2D.Double
+ *  just some simple lines
  *  
  * @author Shunji Zhan
  * @version for UCSB CS56, W16
@@ -28,7 +27,7 @@ public class MultiPictureViewer
        // Set the size to whatever size you like (width, height)
        // For projects you turn in, lets not get any bigger than 640,480
        
-       frame.setSize(800,800); 
+       frame.setSize(1600,900); 
        
        // Set your own title
        frame.setTitle("Shunji's masterpiece");
