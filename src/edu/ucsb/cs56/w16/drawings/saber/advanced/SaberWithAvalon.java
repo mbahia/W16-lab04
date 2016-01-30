@@ -19,11 +19,9 @@ public class SaberWithAvalon extends Saber implements Shape
      */
     public SaberWithAvalon(double x, double y, double width, double height, double avalonX, double avalonY)
     {
-    	// avalonX = leftcorner X
-    	// avalonY = leftcorner Y
+    // avalonX = leftcorner X
+    // avalonY = leftcorner Y
 	super(x,y,width,height);
-	
-	//double degreeInRadian = angle*3.14159/180;
 
 	GeneralPath gp = this.get();
 
