@@ -26,14 +26,13 @@ public class AllMyDrawings
 	Doll d1 = new Doll(100,250,100);
 	g2.setColor(Color.PINK); g2.draw(d1);
 	
-	// Make a black house that's half the size, 
-	// and moved over 150 pixels in x direction
+	// 1/2x sized doll moved over 150 pixels in x direction
 	Shape d2 = ShapeTransforms.scaledCopyOfLL(d1,0.5,0.5);
 	d2 = ShapeTransforms.translatedCopyOf(d2,150,0);
 	g2.setColor(Color.BLACK); g2.draw(d2);
 	
-	// Here's a house that's 4x as big (2x the original)
-	// and moved over 300 more pixels to right.
+
+	// 4x sized doll moved over 300 more pixels to right.
 	d2 = ShapeTransforms.scaledCopyOfLL(d2,4,4);
 	d2 = ShapeTransforms.translatedCopyOf(d2,150,0);
 	
@@ -47,7 +46,7 @@ public class AllMyDrawings
 	
 
 	
-	//SIGN AND LABEL YOUR DRAWING	
+	//signed and labeled	
 	g2.setStroke(thick);
 	g2.setColor(Color.BLACK); 
 	g2.drawString("A doll family by Angela Yung", 20,20);
@@ -69,18 +68,15 @@ public class AllMyDrawings
 	vd3 = ShapeTransforms.translatedCopyOf(vd3,300,300);
 	g2.setColor(Color.BLACK); g2.draw(vd3);
 	
-	
-	// We'll draw this with a thicker stroke
 	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT,
 					BasicStroke.JOIN_BEVEL);       
-	
 	Stroke orig=g2.getStroke();
 	g2.setStroke(thick);
 	g2.setColor(new Color(0x002FA7)); 
 	g2.draw(vd3); 
 	
 		
-	// Sign and label drawing
+	// Sign and label
 	g2.setColor(Color.BLACK); 
 	g2.drawString("Perspective: voodoo dolls", 20,20);
     }
@@ -97,11 +93,12 @@ public class AllMyDrawings
 	VoodooDoll vd1 = new VoodooDoll(200,100,200);
 	g2.setColor(Color.BLACK); g2.draw(vd1);
 	
-	// Rotate the second house 45 degrees around its center.
+	// Rotate 45 degrees around
 	Shape vd2 = ShapeTransforms.rotatedCopyOf(vd1, Math.PI/4.0);
 	vd2 = ShapeTransforms.translatedCopyOf(vd2,100, 40);
 	g2.draw(vd2);
 
+	// Rotate 45 degrees other way
 	Shape vd3 = ShapeTransforms.rotatedCopyOf(vd1, -Math.PI/4.0);
 	vd3 = ShapeTransforms.translatedCopyOf(vd3,-100,40);
 	g2.draw(vd3);
