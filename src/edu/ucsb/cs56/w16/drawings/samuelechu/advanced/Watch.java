@@ -14,10 +14,10 @@ public class Watch extends Clock implements Shape
     /**
      * Constructor for objects of class Watch
      */
-    public Watch(double x, double y, double R)
+    public Watch(double x, double y, double R, double shortHandAt)
     {
 	// construct the basic house shell
-	super(x, y, R);
+	super(x, y, R, shortHandAt);
 	
 	// get the GeneralPath that we are going to append stuff to
 	GeneralPath gp = this.get();

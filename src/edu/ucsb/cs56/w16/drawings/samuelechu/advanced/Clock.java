@@ -25,13 +25,21 @@ public class Clock extends GeneralPathWrapper implements Shape
        @param x x coord of clock center
        @param y y coord of clock center
        @param R radius of clock
+       @param shortHandAt location of short clock hand
     */
-    public Clock(double x, double y, double R)
+
+
+private double theta = 0.0;
+
+public void setTheta(double degrees) {
+	theta = Math.toRadians(degrees);
+}
+    public Clock(double x, double y, double R, double shortHandAt)
     {
 	//R = Outer Radius
 	//r = inner Radius (start of tick line)
 
-
+	//shortHandAt - double between 0 and 12
 
         // Rather than having to scale at the end, we can just
         // draw things the right way to begin with, using the
@@ -41,7 +49,7 @@ public class Clock extends GeneralPathWrapper implements Shape
 
 	//distance from center to start drawing tick
 	double r = R/1.4;        
-
+	 
 
         Circle clockFace = 
             new Circle
@@ -54,34 +62,33 @@ public class Clock extends GeneralPathWrapper implements Shape
         GeneralPath wholeClock = this.get();
         wholeClock.append(clockFace, false);
 
-	//draw Tickmarks and hands
+	//draw Tickmarks
 	for(int i = 0; i < 12; i++){
 	
-		double theta = Math.toRadians(30 * i);
+		setTheta(30 * i);
 		
-		//long clock hand at 9
-		if(i == 0){
-			wholeClock.moveTo(x - (R - R * .1) * Math.cos(theta), y - (R - R * .1) * Math.sin(theta));
-			wholeClock.lineTo(x, y);
-		}
 
-
-		//short clock hand at 1
-		else if(i == 4){
-			wholeClock.moveTo(x - (R - R * .4) * Math.cos(theta), y - (R - R * .4) * Math.sin(theta));
-			wholeClock.lineTo(x, y);
-			wholeClock.moveTo(x - (R - R * .1) * Math.cos(theta), y - (R - R * .1) * Math.sin(theta));
-			wholeClock.lineTo(x - r * Math.cos(theta), y - r * Math.sin(theta));
-		}
-
-		else{
-			wholeClock.moveTo(x - (R - R * .1) * Math.cos(theta), y - (R - R * .1) * Math.sin(theta));
-			wholeClock.lineTo(x - r * Math.cos(theta), y - r * Math.sin(theta));
-		}
-	}   
 	
-	
+		wholeClock.moveTo(x - (R - R * .1) * Math.cos(theta), y - (R - R * .1) * Math.sin(theta));
+		wholeClock.lineTo(x - r * Math.cos(theta), y - r * Math.sin(theta));
 		
+	}  
+
+
+
+//set clock hands
+//0 = hand at 9
+	setTheta(30 * (shortHandAt + 3));
+	//short clock hand at 1
+	wholeClock.moveTo(x - (R - R * .4) * Math.cos(theta), y - (R - R * .4) * Math.sin(theta));
+	wholeClock.lineTo(x, y);
+
+	
+	setTheta(360 * (shortHandAt - (int)shortHandAt) + 30 * 3);
+	//long clock hand at 9
+	wholeClock.moveTo(x - (R - R * .1) * Math.cos(theta), y - (R - R * .1) * Math.sin(theta));
+	wholeClock.lineTo(x, y);
+ 
 	
     }
 }
