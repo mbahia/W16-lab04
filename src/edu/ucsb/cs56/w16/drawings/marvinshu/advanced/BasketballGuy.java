@@ -23,7 +23,6 @@ public class BasketballGuy extends GeneralPathWrapper
 	Circle head = new Circle(x,y,25);
 	Line2D.Double body = new Line2D.Double(x,y+25,x,y+100);
 	Line2D.Double leftArm = new Line2D.Double(x,y+50,x-40,y+75);
-	Line2D.Double rightArm = new Line2D.Double(x,y+50,x+50,y+50);
 	Line2D.Double leftLeg = new Line2D.Double(x,y+100,x-25,y+125);
 	Line2D.Double rightLeg = new Line2D.Double(x,y+100,x+25,y+125);
 	
@@ -31,7 +30,6 @@ public class BasketballGuy extends GeneralPathWrapper
 	guy.append(head,false);
 	guy.append(body,false);
 	guy.append(leftArm,false);
-	guy.append(rightArm,false);
 	guy.append(leftLeg,false);
 	guy.append(rightLeg,false);
     }

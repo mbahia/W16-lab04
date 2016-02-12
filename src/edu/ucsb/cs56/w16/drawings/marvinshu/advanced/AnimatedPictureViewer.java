@@ -14,7 +14,9 @@ import java.awt.event.*;
 
 public class AnimatedPictureViewer {
 
-    int basketballY = 90;
+    int basketballY = 101;
+    int armX = 100;
+    int armY = 160;
     DrawPanel panel;
     
     public static void main (String[] args) {
@@ -47,6 +49,9 @@ public class AnimatedPictureViewer {
 		for(int i = 0; i < 50; i++)
 		    {
 			basketballY++;
+			//leave space between ball and arm
+			if( i >= 0 && i <=10)
+			    armY++;
 			panel.repaint();
 			try{
 			    Thread.sleep(10);
@@ -56,6 +61,8 @@ public class AnimatedPictureViewer {
 		for(int i = 0; i < 50; i++)
 		    {
 			basketballY--;
+			if( i >= 0 && i <=10)
+			    armY--;
 			panel.repaint();
 			try{
 			    Thread.sleep(10);
@@ -73,11 +80,14 @@ public class AnimatedPictureViewer {
           g2.setColor(Color.white);
           g2.fillRect(0,0,this.getWidth(), this.getHeight());
 
-          // Draw the Basketball guy and basketball
+          // Draw the Basketball guy, arm x and basketball
           g2.setColor(Color.RED);
           BasketballGuy guy = new BasketballGuy(100,100);
 	  Basketball ball = new Basketball(100,basketballY);
+	  Arm arm = new Arm(100,150,armY);
           g2.draw(guy);
+	  g2.draw(arm);
+	  g2.setColor(Color.ORANGE);
 	  g2.draw(ball);
        }
     }
