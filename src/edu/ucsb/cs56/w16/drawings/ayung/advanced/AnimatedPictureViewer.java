@@ -22,10 +22,13 @@ public class AnimatedPictureViewer {
     
     private int x = 100; //x coor
     private int y = 100; //y coor
-    private int h = 100; //height
+    private int h = 200; //height
 
+    private int x2 = x+200;
+    private int y2 = y+200;
     
-    Shape test = new VoodooDoll(x,y,h);  //instantiate test doll
+    Shape vd1 = new VoodooDoll(x,y,h);  //instantiate test doll
+    Shape vd2 = new VoodooDoll(x2,y2,h);
 
 
     private int px = -1;
@@ -33,7 +36,8 @@ public class AnimatedPictureViewer {
     private int ph = 5;
     Shape pin;
     
-    private int dx = 5;
+    private int dx = -5;
+    private boolean hit = false;
     private double swing_angle = .015;
     
     public static void main (String[] args) {
@@ -67,6 +71,11 @@ public class AnimatedPictureViewer {
 		public void mouseClicked(MouseEvent e) {
 		    px = e.getX();
 		    py = e.getY();
+		    if(vd2.contains(px,py)) 
+			hit = true;
+		    else {
+			hit = false;
+		    }
 		    pin = new Pin(px,py,ph);
 		}
 	    });
@@ -81,18 +90,32 @@ public class AnimatedPictureViewer {
 	    // Clear the panel first
 	    g2.setColor(Color.white);
 	    g2.fillRect(0,0,this.getWidth(), this.getHeight());
-	    
-	    // Draw the Ipod
+
 	    g2.setColor(Color.BLACK);
 
 	    if(px >= 0) {
 		g2.draw(pin);
-		if(test.contains(px,py)) {
+		if(vd1.contains(px,py)) {
+		    g2.draw(vd2);
 		    g2.setColor(Color.RED);
+		    g2.draw(vd1);
+		}
+		else if(vd2.contains(px,py)) {
+		    g2.draw(vd1);
+		    g2.setColor(Color.RED);
+		    g2.draw(vd2);
+		}
+		else {
+		    g2.draw(vd1);
+		    g2.draw(vd2);
 		}
 	    }
-
-	    g2.draw(test);
+	    else {
+		g2.draw(vd1);
+		g2.draw(vd2);
+	    }
+	    
+	    
 	}
     }
     
@@ -100,21 +123,23 @@ public class AnimatedPictureViewer {
 	public void run() {
 	    try {
 		while (true) {
-		    // Bounce off the walls
-		    /*
-		      if (x >= 400) { dx = -5; }
-		      if (x <= 50) { dx = 5; }
-		      
-		      x += dx;
-		    */
-		    //test = new VoodooDoll(x,y,h);
-		    
-		    test = ShapeTransforms.rotatedCopyOf(test,swing_angle);
-		    if(px >= 0) {
-			pin = ShapeTransforms.rotatedCopyOf(pin, swing_angle);
+
+		    if(px >=0 && vd1.contains(px,py)) {
+			pin = ShapeTransforms.rotatedCopyOf(pin,swing_angle);
 		    }
+		    vd1 = ShapeTransforms.rotatedCopyOf(vd1,swing_angle);
+
+		    if(x2 >= 400) {dx = -5;}
+		    if(x2 <= 100) {dx = 5;}
+		    if(px >= 0 && hit) {
+			pin = ShapeTransforms.translatedCopyOf(pin,dx,0);
+			px+=dx;
+		    }
+		    x2+=dx;
+		    vd2 = ShapeTransforms.translatedCopyOf(vd2,dx,0);
+		    
 		    panel.repaint();
-		    Thread.sleep(20);
+		    Thread.sleep(50);
 		}
 	    } catch(Exception ex) {
 		if (ex instanceof InterruptedException) {
