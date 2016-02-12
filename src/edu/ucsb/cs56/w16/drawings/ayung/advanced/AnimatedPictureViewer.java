@@ -94,6 +94,7 @@ public class AnimatedPictureViewer {
 	    g2.fillRect(0,0,this.getWidth(), this.getHeight());
 
 	    g2.setColor(Color.BLACK);
+	    g2.drawString("Click to try to hit the voodoo doll!",20,20);
 
 	    if(px >= 0) {
 		g2.draw(pin);
