@@ -8,7 +8,9 @@ import edu.ucsb.cs56.w16.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.w16.drawings.utilities.GeneralPathWrapper;
 
 /**
- * A main class to view an animation
+ * A main class to view an animation. Click to place a pin on the screen. If
+ * the pin hits the doll, it will turn it red. If you pin exactly on the doll
+ * on the first try, the pin will animate with the doll.
  *
  * @author Angela Yung
  * @version for CS56, W16
