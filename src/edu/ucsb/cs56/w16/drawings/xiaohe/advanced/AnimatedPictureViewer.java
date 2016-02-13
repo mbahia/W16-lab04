@@ -14,8 +14,6 @@ import edu.ucsb.cs56.w16.drawings.utilities.ShapeTransforms;
 public class AnimatedPictureViewer {
 
     private DrawPanel panel = new DrawPanel();
-    
-    //private LittleGirl girl = new LittleGirl(100, 100, 50, 135);
 
     JButton grow;
     JButton shrink;
