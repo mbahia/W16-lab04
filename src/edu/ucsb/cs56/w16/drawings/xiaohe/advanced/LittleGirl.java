@@ -63,12 +63,12 @@ public class LittleGirl extends GeneralPathWrapper implements Shape
 	
         // put the whole house together
 	
-        GeneralPath wholeHouse = this.get();
-        wholeHouse.append(face, false);
-        wholeHouse.append(body1, false);
-        wholeHouse.append(body2, false);
-	wholeHouse.append(body3, false);
-	wholeHouse.append(leftLeg, false);
-	wholeHouse.append(rightLeg, false);
+        GeneralPath wholeGirl = this.get();
+        wholeGirl.append(face, false);
+        wholeGirl.append(body1, false);
+        wholeGirl.append(body2, false);
+	wholeGirl.append(body3, false);
+	wholeGirl.append(leftLeg, false);
+	wholeGirl.append(rightLeg, false);
     }
 }
