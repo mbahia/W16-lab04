@@ -54,11 +54,7 @@ public class Monster extends GeneralPathWrapper implements Shape
 	Line2D.Double thirdline_part2 = new Line2D.Double (x+distance+distance+width*0.03+distance+width*0.03,y,
 							   x+distance+distance+width*0.03+distance+width*0.03,y+height);
                                
-	
-       
-	
-        // put the whole house together
-	
+      
         GeneralPath wholeMonster = this.get();
         wholeMonster.append(firstline_part1, false);
         wholeMonster.append(firstline_part2, false);
